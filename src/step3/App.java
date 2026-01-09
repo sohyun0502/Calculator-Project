@@ -8,21 +8,32 @@ public class App {
         ArithmeticCalculator<Double> calculator = new ArithmeticCalculator<>();
 
         while (true) {
-
-            System.out.print("첫 번째 숫자를 입력하세요: ");
-            double number1 = sc.nextDouble();
-
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            double number2 = sc.nextDouble();
-
-            System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /): ");
-            char operator = sc.next().charAt(0);
-
-            // 0으로 나눌때와 연산기호를 잘못 입력했을때 예외처리
             try {
-                double result = calculator.calculate(number1, number2, operator);
+                // 숫자 입력
+                System.out.print("첫 번째 숫자를 입력하세요: ");
+                double number1 = sc.nextDouble();
+
+                System.out.print("두 번째 숫자를 입력하세요: ");
+                double number2 = sc.nextDouble();
+
+                // 연산자 입력
+                System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /): ");
+
+                String input = sc.next();
+                if (input.length() != 1) {
+                    throw new IllegalArgumentException("연산자는 한 글자만 입력하세요.");
+                }
+                char operator = input.charAt(0);
+
+                // char → enum 변환
+                OperatorType operatorType = OperatorType.from(operator);
+
+                // 계산
+                double result = calculator.calculate(number1, number2, operatorType);
                 System.out.println("결과: " + result);
+
             } catch (ArithmeticException | IllegalArgumentException e) {
+                // 0으로 나누기, 잘된된 연산자 처리
                 System.out.println(e.getMessage());
             }
 
@@ -31,7 +42,7 @@ public class App {
             String exit = sc.next();
 
             // 'exit' 입력시 반복문을 빠져나옴
-            if (exit.equals("exit")) {
+            if ("exit".equalsIgnoreCase(exit)) {
                 System.out.println("======계산기가 종료됩니다======");
                 break;
             }
@@ -39,5 +50,7 @@ public class App {
         System.out.print("값을 입력하세요 : ");
         double num = sc.nextDouble();
         calculator.printMaxList(num);
+
+        sc.close();
     }
 }
