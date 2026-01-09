@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    // 1) 양의 정수 2개(0 포함)와 연산 기호를 매개변수로 받아 사칙연산(➕,➖,✖️,➗) 기능을 수행한 후
-    // 2) 결과 값을 반환하는 메서드와 연산 결과를 저장하는 컬렉션 타입 필드를 가진 Calculator 클래스를 생성
 
-    private int number1;
-    private int number2;
-    private char operator;
     private List<Integer> list = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션 타입 필드
 
     // 양의 정수 2개(0 포함)와 연산 기호를 매개변수로 받아 사칙연산 수행하는 메서드
