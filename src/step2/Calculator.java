@@ -53,7 +53,16 @@ public class Calculator {
     }
 
     // 컬렉션에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 메서드
-    public void removeResult() {
-        list.remove(0);
+    public void removeResult(char c) {
+        if (Character.toLowerCase(c) == 'y') {
+            list.remove(0);
+            System.out.println("데이터를 삭제했습니다.");
+            System.out.println("연산결과 리스트 : " + getList());
+        } else if (Character.toLowerCase(c) == 'n') {
+            System.out.println("삭제하지 않았습니다.");
+            System.out.println("연산결과 리스트 : " + getList());
+        } else {
+            System.out.println("y 또는 n을 입력해주세요.");
+        }
     }
 }

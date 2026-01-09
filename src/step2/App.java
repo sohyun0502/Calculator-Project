@@ -37,8 +37,11 @@ public class App {
                 break;
             }
         }
-        System.out.println(calculator.getList());
-        //calculator.removeResult();
-        //System.out.println(calculator.getList());
+        System.out.println("연산결과 리스트 : " + calculator.getList());
+        if (!calculator.getList().isEmpty()) {
+            System.out.print("가장 먼저 저장된 데이터를 삭제하겠습니까 (y/n) : ");
+            char c = sc.next().charAt(0);
+            calculator.removeResult(c);
+        }
     }
 }
