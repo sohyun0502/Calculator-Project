@@ -1,6 +1,11 @@
 package step2;
 
 import java.util.Scanner;
+/*
+ * STEP 2
+ * 계산된 결과 값들을 기록하는 컬렉션을 만든다.
+ * 컬렉션의 가장 먼저 저장된 데이터를 삭제하는 기능을 만든다.
+ */
 
 public class App {
     public static void main(String[] args) {
@@ -32,7 +37,7 @@ public class App {
             String exit = sc.next();
 
             // 'exit' 입력시 반복문을 빠져나옴
-            if (exit.equals("exit")) {
+            if ("exit".equalsIgnoreCase(exit)) {
                 System.out.println("======계산기가 종료됩니다======");
                 break;
             }

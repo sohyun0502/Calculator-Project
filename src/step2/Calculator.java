@@ -31,7 +31,7 @@ public class Calculator {
                 break;
             default:
                 // 예외처리 - 잘못된 인자를 입력했으므로 IllegalArgumentException 사용
-                throw new IllegalArgumentException("잘못된 연산 기호입니다: " + operator);
+                throw new IllegalArgumentException("잘못된 연산 기호입니다.");
         }
         list.add(result);
         return result;

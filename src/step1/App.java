@@ -3,10 +3,10 @@ package step1;
 import java.util.Scanner;
 
 /*
-* STEP 1
-* 계산기는 2개의 숫자를 받을 수 있고 사칙연산 될 문자를 받을 수 있다.
-* 계산기는 exit을 입력할 때까지 계속해서 값을 받고 연산 결과를 반환한다.
-*/
+ * STEP 1
+ * 계산기는 2개의 숫자를 받을 수 있고 사칙연산 될 문자를 받을 수 있다.
+ * 계산기는 exit을 입력할 때까지 계속해서 값을 받고 연산 결과를 반환한다.
+ */
 
 public class App {
     public static void main(String[] args) {
@@ -42,7 +42,7 @@ public class App {
                 case  '/':
                     // 연산 오류가 발생할 경우 해당 오류에 대한 내용을 정제하여 출력 (0으로 나누기)
                     if(number2 == 0) {
-                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                        System.out.println("0으로 나눌 수 없습니다.");
                         continue;
                     } else {
                         result = number1 / number2;
@@ -50,7 +50,7 @@ public class App {
                     }
                 default:
                     // +, -, *, / 외의 연산기호나 문자 입력시 아래 내용 출력
-                    System.out.println("연산기호를 잘못 입력하였습니다.");
+                    System.out.println("잘못된 연산 기호입니다.");
             }
 
             System.out.println("결과: " + result);
@@ -60,7 +60,7 @@ public class App {
             String exit = sc.next();
 
             // 'exit' 입력시 반복문을 빠져나옴
-            if (exit.equals("exit")) {
+            if ("exit".equalsIgnoreCase(exit)) {
                 System.out.println("======계산기가 종료됩니다======");
                 break;
             }

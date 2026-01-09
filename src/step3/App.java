@@ -1,6 +1,12 @@
 package step3;
 
 import java.util.Scanner;
+/*
+ * STEP 3
+ * 양의 정수만 받을 수 있었지만, 이제부터는 실수도 받을 수 있게 수정한다.
+ * 결과가 저장되어 있는 컬렉션을 조회하는 기능을 만든다.
+ * 그 때 특정 값보다 큰 결과 값을 출력할 수 있도록 한다.
+ */
 
 public class App {
     public static void main(String[] args) {
