@@ -15,7 +15,7 @@ public class App {
 
         while (true) {
             try {
-                // 숫자 입력
+                // 숫자
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 double number1 = sc.nextDouble();
 
@@ -29,10 +29,10 @@ public class App {
                 if (input.length() != 1) {
                     throw new IllegalArgumentException("연산자는 한 글자만 입력하세요.");
                 }
-                char operator = input.charAt(0);
+                char op = input.charAt(0);
 
                 // char → enum 변환
-                OperatorType operatorType = OperatorType.from(operator);
+                OperatorType operatorType = OperatorType.change(op);
 
                 // 계산
                 double result = calculator.calculate(number1, number2, operatorType);

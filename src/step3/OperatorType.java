@@ -8,21 +8,18 @@ public enum OperatorType {
 
     private final char operator;
 
+    // 생성자
     OperatorType (char operator) {
         this.operator = operator;
     }
 
-    public char getOperator() {
-        return operator;
-    }
-
     // char → enum 변환
-    public static OperatorType from(char operator) {
+    public static OperatorType change(char op) {
         for (OperatorType type : values()) {
-            if (type.operator == operator) {
+            if (type.operator == op) {
                 return type;
             }
         }
-        throw new IllegalArgumentException("잘못된 연산자입니다: " + operator);
+        throw new IllegalArgumentException("잘못된 연산자입니다: " + op);
     }
 }
