@@ -33,6 +33,7 @@ public class Calculator {
                 // 예외처리 - 잘못된 인자를 입력했으므로 IllegalArgumentException 사용
                 throw new IllegalArgumentException("잘못된 연산 기호입니다.");
         }
+        // ArrayList에 연산 결과 저장
         list.add(result);
         return result;
     }
@@ -50,6 +51,7 @@ public class Calculator {
     // 컬렉션에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 메서드
     public void removeResult(char c) {
         if (Character.toLowerCase(c) == 'y') {
+            // ArrayList에서 첫번째 요소 삭제
             list.remove(0);
             System.out.println("데이터를 삭제했습니다.");
             System.out.println("연산결과 리스트 : " + getList());
@@ -57,7 +59,7 @@ public class Calculator {
             System.out.println("삭제하지 않았습니다.");
             System.out.println("연산결과 리스트 : " + getList());
         } else {
-            System.out.println("y 또는 n을 입력해주세요.");
+            throw new IllegalArgumentException("y 또는 n을 입력해주세요");
         }
     }
 }

@@ -28,6 +28,16 @@ public class App {
             try {
                 int result = calculator.calculate(number1, number2, operator);
                 System.out.println("결과: " + result);
+
+                // 연산결과 저장한 리스트 출력
+                System.out.println("연산결과 리스트 : " + calculator.getList());
+
+                // 가장 먼저 저장된 연산결과 삭제
+                if (!calculator.getList().isEmpty()) {
+                    System.out.print("가장 먼저 저장된 데이터를 삭제하겠습니까 (y/n) : ");
+                    char c = sc.next().charAt(0);
+                    calculator.removeResult(c);
+                }
             } catch (ArithmeticException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
@@ -42,11 +52,7 @@ public class App {
                 break;
             }
         }
-        System.out.println("연산결과 리스트 : " + calculator.getList());
-        if (!calculator.getList().isEmpty()) {
-            System.out.print("가장 먼저 저장된 데이터를 삭제하겠습니까 (y/n) : ");
-            char c = sc.next().charAt(0);
-            calculator.removeResult(c);
-        }
+
+        sc.close();
     }
 }

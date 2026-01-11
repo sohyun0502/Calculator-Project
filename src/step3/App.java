@@ -11,11 +11,13 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // ArithmeticCalculator 객체 생성
         ArithmeticCalculator<Double> calculator = new ArithmeticCalculator<>();
 
         while (true) {
             try {
-                // 숫자
+                // 숫자 입력
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 double number1 = sc.nextDouble();
 
@@ -53,7 +55,9 @@ public class App {
                 break;
             }
         }
-        System.out.print("값을 입력하세요 : ");
+
+        // 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값 들을 출력
+        System.out.print(":::연산 결과들과 비교할 값을 입력하세요 : ");
         double num = sc.nextDouble();
         calculator.printMaxList(num);
 
