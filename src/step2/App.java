@@ -15,11 +15,22 @@ public class App {
 
         while (true) {
 
-            System.out.print("첫 번째 숫자를 입력하세요: ");
-            int number1 = sc.nextInt();
+            // 양의 정수(0 포함)만 입력되도록 반복문과 조건 걸어줌
+            int number1;
+            while (true) {
+                System.out.print("첫 번째 숫자를 입력하세요 (0 이상): ");
+                number1 = sc.nextInt();
+                if (number1 >= 0) break;
+                System.out.println("0 이상의 정수만 입력할 수 있습니다.");
+            }
 
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            int number2 = sc.nextInt();
+            int number2;
+            while (true) {
+                System.out.print("두 번째 숫자를 입력하세요 (0 이상): ");
+                number2 = sc.nextInt();
+                if (number2 >= 0) break;
+                System.out.println("0 이상의 정수만 입력할 수 있습니다.");
+            }
 
             System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /): ");
             char operator = sc.next().charAt(0);
